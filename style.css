@@ -51,25 +51,29 @@ li{
 .menu .logo{
     float: left;
     font-weight: 800;
-
+}
+.menu .logo:hover {
+    cursor: pointer;
 }
 .sidebar{
     border-right: 2px solid lavender;
     float: left;
     width: auto;
     padding: 20px;
-    margin: 20px;
     margin-top: auto;
     margin-left: auto;
     background-color: white;
     align-content: space-between;
+    display: grid;
 }
 .sidebar_item{
     font-size: smaller;
     width: auto;
-    margin:4px 0px;
+    margin:4px 0;
+    padding: 10px;
 }
 .sidebar .sidebar_item:hover{
+    cursor: pointer;
     border-bottom: 2px solid transparent;
     border-image-source: linear-gradient(
             to right, /* Red section */
