@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header chính */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img {
+    width: 65px;
+    height: 45px;
+}
+
+.logo span {
+    color: #33b1b0;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+/* Ô tìm kiếm */
+.search-box {
+    display: flex;
+    flex: 1;
+    margin: 0 50px;
+    max-width: 800px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-box button {
+    background-color: #33b1b0;
+    border: none;
+    color: white;
+    width: 60px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-size: 18px;
+}
+
+/* Nút đăng nhập + icon */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #33b1b0;
+    font-size: 16px;
+}
+
+.user-actions a {
+    color: #33b1b0;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.user-actions a:hover {
+    text-decoration: underline;
+}
+
+/* Icon trái tim + giỏ hàng */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.icons i {
+    font-size: 22px;
+    color: #33b1b0;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #33b1b0;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 2px 6px;
+}
+/*thêm sidebar*/
+.sidebar{
+    border-right: 2px solid lavender;
+    float: left;
+    width: auto;
+    padding: 20px;
+    margin-top: auto;
+    margin-left: auto;
+    background-color: white;
+    align-content: space-between;
+    display: grid;
+}
+.sidebar_item{
+    font-size: smaller;
+    width: auto;
+    margin:4px 0;
+    padding: 10px;
+}
+.sidebar .sidebar_item:hover{
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    border-image-source: linear-gradient(
+            to right, /* Red section */
+            #f7cfd8 0%,
+            #f7cfd8 33.3%,
+                /* Blue section */
+            #f4f8d3 33.3%,
+            #f4f8d3 66.6%,
+                /* Green section */
+            #a6f1e0 66.6%,
+            #a6f1e0 100%
+    );
+    border-image-slice: 1;
+}
