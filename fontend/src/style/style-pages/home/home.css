@@ -1,312 +1,116 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", sans-serif;
+body{
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    background-color: antiquewhite;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
 }
-
-/* --- HEADER --- */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 40px;
+#header{
+    height: 65px;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.25);
     background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    gap: 20px;
-}
-
-.logo {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
 }
-
-.logo img {
-    width: 100px;
-    height: auto;
+header{
+    unicode-bidi: isolate;
 }
-
-/* SỬA LỖI: Tên class là .search-box */
-.search-box {
-    display: flex;
-    align-items: center;
-    flex: 1; /* Cho phép thanh tìm kiếm co giãn */
-    max-width: 600px;
-    margin: 0 20px; /* Thêm khoảng cách 2 bên */
-}
-
-.search-box input {
-    flex: 1;
-    padding: 10px 15px;
-    border: 1px solid #ccc;
-    border-radius: 25px 0 0 25px;
-    outline: none;
-    font-size: 15px;
-    border-right: none; /* Bỏ viền phải */
-}
-
-.search-box button {
-    padding: 10px 20px;
-    border: 1px solid #37b9c4; /* Thêm viền */
-    background-color: #37b9c4;
-    color: #fff;
-    border-radius: 0 25px 25px 0;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* SỬA LỖI: Tên class là .user-actions */
-.user-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.user-actions > a { /* Link Đăng nhập */
-    text-decoration: none;
-    color: #333; /* Đổi màu chữ */
-    font-weight: 600;
-    white-space: nowrap; /*Không xuống dòng*/
-}
-
-.user-actions .icons {
-    display: flex;
-    gap: 20px;
-}
-
-.user-actions .icons a {
-    text-decoration: none;
-    color: #37b9c4;
-    position: relative; /* Để định vị badge */
-}
-
-.user-actions .icons i {
-    font-size: 24px; /* Icon to hơn 1 chút */
-}
-
-/* Định dạng cho số (badge) trên icon */
-.user-actions .badge {
-    position: absolute;
-    top: -8px;
-    right: -10px;
-    background-color: #f06a6a; /* Màu đỏ */
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 11px;
-    font-weight: bold;
-    border: 1px solid #fff;
-}
-
-
-/* --- NAVIGATION --- */
-/* SỬA LỖI: Tên class là .main-nav */
-.main-nav {
-    background-color: #37b9c4;
-    padding: 0 40px; /* Căn lề 2 bên */
-    border-top: 1px solid #e0e0e0;
-}
-
-.main-nav ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    height: 45px; /* Cho nav 1 chiều cao cố định */
-}
-
-.main-nav ul li {
-    margin: 0;
-}
-
-.main-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: 0.2s;
-    padding: 10px 15px; /* Tăng vùng nhấn */
-    height: 100%;
-}
-
-.main-nav ul li a:hover {
-    background-color: rgba(255,255,255, 0.1);
-}
-
-.main-nav ul li a i {
-    color: #fff; /* Đổi icon nav sang màu trắng */
-}
-
-/* THÊM MỚI: Đẩy Hotline sang bên phải */
-.main-nav ul li.hotline {
-    margin-left: auto; /* Đây là trick để đẩy sang phải */
-    color: #fff;
-    font-size: 15px;
-    padding: 0 15px;
-}
-
-/* THÊM MỚI: Định dạng cho item "Danh mục" đầu tiên */
-.main-nav ul li:first-child {
-    background-color: #2c9aa3; /* Màu đậm hơn */
-    font-weight: 600;
-}
-
-/* --- THÊM MỚI: BỐ CỤC CHÍNH --- */
-.main-container {
-    display: flex;
-    /* Căn lề 2 bên 40px giống header/nav */
+.container-home {
     width: 100%;
-    max-width: 1400px; /* Giới hạn chiều rộng tối đa */
-    margin: 0 auto; /* Căn giữa layout */
-    padding: 20px 40px; /* Thêm khoảng cách trên/dưới */
-    gap: 20px; /* Khoảng cách giữa sidebar và content */
-    background-color: #f4f4f4; /* Màu nền cho body */
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
-
-/* --- SIDEBAR DANH MỤC --- */
-.sidebar {
-    width: 260px;
-    background-color: #fff;
-    border: 1px solid #eee; /* Thêm viền mờ */
-    border-radius: 5px; /* Bo góc */
-    flex-shrink: 0; /* Không cho sidebar co lại */
-    padding: 0; /* Reset padding */
-    align-self: flex-start; /* Giữ sidebar ở trên cùng */
-    overflow: hidden; /* Ẩn các phần bo góc */
+*{
+    box-sizing: border-box;
 }
-
-.sidebar h3 {
-    background-color: #37b9c4;
-    color: #fff;
-    font-size: 16px; /* Giảm cỡ chữ 1 chút */
-    padding: 12px 20px;
+#header .headerMain{
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    justify-content: space-between;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
-    margin: 0; /* Xóa margin mặc định */
 }
-
-.sidebar ul {
-    list-style: none;
-    padding: 5px 0; /* Thêm padding trên dưới */
-    margin: 0;
-}
-
-.sidebar ul li {
+#header .headerMain .headerBars{
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    border-bottom: 1px solid #f1f1f1;
-    transition: background 0.2s;
+    width: 20%;
 }
-
-.sidebar ul li:last-child {
-    border-bottom: none; /* Bỏ viền item cuối */
+#header .headerMain .headerBars a{
+    margin-right: 20px;
 }
-
-.sidebar ul li:hover {
-    background-color: #f5f5f5;
-    cursor: pointer;
+a{
+    color: #37a1a5;
 }
-
-/* SỬA LỖI: Định dạng cho <i> thay vì <img> */
-.sidebar ul li i {
-    width: 25px;
-    height: 25px;
-    font-size: 18px; /* Chỉnh cỡ icon */
-    color: #37b9c4; /* Cho icon màu teal */
+a:hover{
+    ccolor: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+#header .headerMain .headerLeft {
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 0;
 }
-
-.sidebar ul li span {
-    font-size: 15px;
-    color: #333;
+#header .headerMain .headerLeft .headerLogo img {
+    max-height: 50px;
 }
-
-/* --- THÊM MỚI: KHU VỰC NỘI DUNG CHÍNH --- */
-.content-area {
-    flex: 1; /* Chiếm toàn bộ không gian còn lại */
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #eee;
+.img-fluid {
+    max-width: 100%;
+    height: auto;
 }
-
-.banner-placeholder {
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+#header .headerMain .headerCenter {
+    display: none;
+    width: 50%;
+}
+#header .headerSearch {
+    position: relative;
     width: 100%;
-    /* Tạm thời dùng ảnh bạn cung cấp làm nền */
-    background: url('image_092a5b.jpg') no-repeat center center;
-    background-size: cover; /* Phủ đầy */
-    height: 450px; /* Tạm 1 chiều cao */
-    border-radius: 5px 5px 0 0; /* Bo góc trên */
+    margin: 0;
+}
+form {
+    display: block;
+    margin-top: 0;
+    unicode-bidi: isolate;
+}
+#header .headerSearch .headerSearchMain {
+    display: flex;
+}
+#header .headerSearch {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+input {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+#header .headerSearch .headerSearchMain .headerSearchInput {
+    width: 100%;
+    padding: 0px 50px 0px 20px;
+    height: 35px;
+    line-height: 50px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 900px) {
-    header {
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-        padding: 10px 15px;
-    }
-
-    .search-box {
-        width: 100%;
-        margin-top: 10px;
-        order: 3; /* Đưa xuống cuối header */
-    }
-
-    .user-actions {
-        margin-top: 10px;
-        order: 2; /* Đưa lên trên search */
-    }
-
-    .logo {
-        order: 1;
-    }
-
-    .main-nav {
-        padding: 0;
-    }
-    .main-nav ul {
-        flex-wrap: wrap;
-        height: auto;
-        justify-content: center;
-    }
-    .main-nav ul li {
-        width: 50%; /* 2 item 1 hàng */
-        text-align: center;
-    }
-    .main-nav ul li a {
-        justify-content: center;
-    }
-
-    .main-nav ul li.hotline {
-        margin-left: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-        background: #2c9aa3;
-    }
-
-    /* THÊM MỚI: Cho 2 cột xếp chồng lên nhau */
-    .main-container {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .sidebar {
-        /* Trong hình của bạn, sidebar bị ẩn ở nav */
-        /* và có thể được bật/tắt bằng JavaScript */
-        /* Tạm thời chúng ta sẽ ẩn nó đi trên mobile */
-        display: none;
-    }
-
-    .content-area {
-        width: 100%;
-    }
-}
