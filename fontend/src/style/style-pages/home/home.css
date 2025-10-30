@@ -29,11 +29,10 @@ body {
     box-shadow: 0 8px 10px -2px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
 }
 
-.logo{
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
-    display: inline-block;
+.logo {
+    height: 40px;
+    width: auto;
+    display: block;
     cursor: pointer;
 }
 
@@ -69,6 +68,7 @@ body > #header > nav > ul{
     text-decoration: none;
     transition: color 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
     border-radius: 5px;
+    text-align: center
 }
 
 .navBar ul li.active a{
@@ -77,7 +77,7 @@ body > #header > nav > ul{
 
 .navBar ul li a:hover{
     color: white;
-    background-color: black;
+    background-color: #17a2b8;
     border-radius: 5px;
     font-weight: bold;
     transform: scale(1.05);
@@ -86,7 +86,7 @@ body > #header > nav > ul{
 
 .navBar ul li:hover > a {
     color: white;
-    background-color: black;
+    background-color: #17a2b8;
     border-radius: 5px !important;
     font-weight: bold;
 }
@@ -128,4 +128,92 @@ body > #header > nav > ul > li > a{
 .submenu-column {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+}
+
+.submenu-column a:hover {
+    color: #17a2b8;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.icons a {
+    color: #000000;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.icons a:hover {
+    color: #17a2b8;
+}
+
+.user-login {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.user-login span {
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+.user-login {
+    position: relative;
+    font-size: 18px;
+}
+
+.user-popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 165px;
+    z-index: 10;
+    transform: translate(50%, 0px);
+
+}
+
+.user-popup a {
+    display: block;
+    padding: 8px 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.user-popup a:hover {
+    background-color: #f0f0f0;
+
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0.8, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.search-container {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
 }
