@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.feature-image{
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+.img_feature_image{
+width: 100%;
+height: auto;
+}
